@@ -9,14 +9,14 @@ import re
 # should extract a match where the first group is the username, the second group is the domain
 # and the third group is the top-level domain (com, edu, org, etc.)
 email_string = "student123@university.edu"
-pat = re.compile("REPLACE ME", re.IGNORECASE)
+pat = re.compile("([\w\-._]+)@(\w+).(\w+)", re.IGNORECASE)
 email_matches = pat.match(email_string)
 
 # problem 2
 # should extract a match where the first group is the hour, the second group is the minutes,
 # and the third group is AM or PM (if present)
 time_string = "3:45 PM"
-pat = re.compile("REPLACE ME", re.IGNORECASE)
+pat = re.compile("(\d{1,2})\s*[: ]\s*(\d{2})\s*([a-zA-Z]{2})?", re.IGNORECASE)
 time_matches = pat.match(time_string)
 
 # problem 3
